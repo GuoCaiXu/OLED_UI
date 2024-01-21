@@ -3,20 +3,20 @@
         {
             "name": "Project",
             "includePath": [
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Libraries\\CMSIS\\startup",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Libraries\\CMSIS",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Sys",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\User",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Hardware",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Project\\Project_EIDE\\.cmsis\\include",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Project\\RTE\\_Targets",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Project\\Project_EIDE\\.eide\\deps",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Libraries\\CMSIS\\startup",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Libraries\\CMSIS",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Sys",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\User",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Hardware",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Project\\Project_EIDE\\.cmsis\\include",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Project\\RTE\\_Targets",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Project\\Project_EIDE\\.eide\\deps",
                 "C:\\Software\\STM32_soft\\Keil\\ARM\\ARMCC\\include",
                 "C:\\Software\\STM32_soft\\Keil\\ARM\\ARMCC\\include\\rw",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Libraries\\STM32F10x_StdPeriph_Driver\\src",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Sys\\delay",
-                "c:\\SyncFile\\03-Project\\05-U8G2_C8T6\\02-江科大\\V1.0\\Hardware\\oled"
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Libraries\\STM32F10x_StdPeriph_Driver\\src",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Sys\\delay",
+                "c:\\SyncFile\\03-Project\\05-OLED_UI\\02-江科大\\V1.0\\Hardware\\oled"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",

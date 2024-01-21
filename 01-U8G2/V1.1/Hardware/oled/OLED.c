@@ -125,14 +125,14 @@ void ui_show(void){
 	u8g2_ClearBuffer(&u8g2);
 	for (uint8_t i = 0; i < list_len; i ++){						// 显示list结构体的所以字符
 
-		u8g2_DrawStr(&u8g2, x, y+i*(font_Hight-1), list[i].str);				// 显示字符	x表示字符从x+2开始， y表示从y+i*20开始
+		u8g2_DrawStr(&u8g2, x, y+i*(font_Hight), list[i].str);				// 显示字符	x表示字符从x+2开始， y表示从y+i*20开始
 	}
 	u8g2_SetDrawColor(&u8g2, 2);
 	u8g2_DrawRBox(&u8g2, x, frame_y, frame_len, font_Hight, 0);			// 画框框
 	u8g2_SetDrawColor(&u8g2, 1);
-	ui_run(&y, &y_trg, 7, 3);
-	ui_run(&frame_y, &frame_y_trg, 7, 3);							// 框框的y值的ui
-	ui_run(&frame_len, &frame_len_trg, 15, 7);
+	ui_run(&y, &y_trg, 1, 3);
+	ui_run(&frame_y, &frame_y_trg, 1, 3);							// 框框的y值的ui
+	ui_run(&frame_len, &frame_len_trg, 1, 7);
 	u8g2_SendBuffer(&u8g2);
 }
 
@@ -173,7 +173,7 @@ void ui_porc(void){
 			frame_y_trg = 0;
 		}
 		if (frame_y_trg < 0){
-			y_trg += (font_Hight);
+			y_trg += (font_Hight-1);
 			frame_y_trg = 0;
 		}
 		key[1].long_flag = 0;  

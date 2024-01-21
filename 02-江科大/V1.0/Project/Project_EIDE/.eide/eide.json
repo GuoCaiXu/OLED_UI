@@ -176,21 +176,63 @@
       },
       {
         "name": "HARDWARE",
-        "files": [
+        "files": [],
+        "folders": [
           {
-            "path": "../../Hardware/oled/OLED_Data.c"
+            "name": "key",
+            "files": [
+              {
+                "path": "../../Hardware/key/bsp_key.c"
+              },
+              {
+                "path": "../../Hardware/key/bsp_key.h"
+              }
+            ],
+            "folders": []
           },
           {
-            "path": "../../Hardware/oled/OLED_Data.h"
+            "name": "oled",
+            "files": [
+              {
+                "path": "../../Hardware/oled/OLED_Data.c"
+              },
+              {
+                "path": "../../Hardware/oled/OLED_Data.h"
+              },
+              {
+                "path": "../../Hardware/oled/OLED.c"
+              },
+              {
+                "path": "../../Hardware/oled/OLED.h"
+              }
+            ],
+            "folders": []
           },
           {
-            "path": "../../Hardware/oled/OLED.c"
+            "name": "tim",
+            "files": [
+              {
+                "path": "../../Hardware/tim/bsp_tim.c"
+              },
+              {
+                "path": "../../Hardware/tim/bsp_tim.h"
+              }
+            ],
+            "folders": []
           },
           {
-            "path": "../../Hardware/oled/OLED.h"
+            "name": "ui",
+            "files": [
+              {
+                "path": "../../Hardware/ui/ui.c"
+              },
+              {
+                "path": "../../Hardware/ui/ui.h"
+              }
+            ],
+            "folders": []
           }
-        ],
-        "folders": []
+        ]
       },
       {
         "name": "STARTUP",
