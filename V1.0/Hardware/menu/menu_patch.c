@@ -1,4 +1,5 @@
 # include "./menu/menu.h"
+# include "string.h"
 
 uint8_t ui_run(int8_t *a, int8_t *a_trg, int8_t step, int8_t slow_cnt){
 

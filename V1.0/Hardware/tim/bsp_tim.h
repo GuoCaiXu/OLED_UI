@@ -3,6 +3,6 @@
 
 # include "stm32f10x.h"
 
-void TIM2_Init(int psc, int per);
+void TIM3_Init(int psc, int per);
 
 # endif

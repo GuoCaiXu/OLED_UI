@@ -179,6 +179,18 @@
         "files": [],
         "folders": [
           {
+            "name": "encoder",
+            "files": [
+              {
+                "path": "../../Hardware/encoder/Encoder.c"
+              },
+              {
+                "path": "../../Hardware/encoder/Encoder.h"
+              }
+            ],
+            "folders": []
+          },
+          {
             "name": "key",
             "files": [
               {
@@ -253,6 +265,18 @@
         ]
       },
       {
+        "name": "Setting",
+        "files": [
+          {
+            "path": "../../Hardware/setting/setting.c"
+          },
+          {
+            "path": "../../Hardware/setting/setting.h"
+          }
+        ],
+        "folders": []
+      },
+      {
         "name": "STARTUP",
         "files": [
           {
@@ -271,6 +295,11 @@
             "path": "../../Sys/delay/bsp_delay.h"
           }
         ],
+        "folders": []
+      },
+      {
+        "name": "Tools",
+        "files": [],
         "folders": []
       },
       {

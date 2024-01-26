@@ -27,7 +27,7 @@
 #define OLED_FILLED				1
 
 /*********************参数宏定义*/
-
+extern uint8_t OLED_DisplayBuf[8][128];
 
 /*函数声明*********************/
 

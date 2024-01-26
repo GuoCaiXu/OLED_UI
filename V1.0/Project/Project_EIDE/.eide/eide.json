@@ -179,6 +179,18 @@
         "files": [],
         "folders": [
           {
+            "name": "encoder",
+            "files": [
+              {
+                "path": "../../Hardware/encoder/Encoder.c"
+              },
+              {
+                "path": "../../Hardware/encoder/Encoder.h"
+              }
+            ],
+            "folders": []
+          },
+          {
             "name": "key",
             "files": [
               {

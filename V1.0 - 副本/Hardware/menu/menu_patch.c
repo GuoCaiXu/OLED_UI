@@ -1,4 +1,5 @@
 # include "./menu/menu.h"
+# include "string.h"
 
 uint8_t ui_run(int8_t *a, int8_t *a_trg, int8_t step, int8_t slow_cnt){
 
@@ -60,7 +61,7 @@ int8_t Menu_strlen(char *str){
  * 返 回 值：无
  * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
  */
-void Menu_ShowChinese(int8_t X, int8_t Y, char *Hanzi) // 汉字单字打印;
+void Menu_ShowChinese(int8_t X, int8_t Y, char *Hanzi, uint8_t FontSize) // 汉字单字打印;
 {
 	uint8_t pIndex;
 	for (pIndex = 0; strcmp(OLED_CF16x16[pIndex].Index, "") != 0; pIndex++)
@@ -75,39 +76,53 @@ void Menu_ShowChinese(int8_t X, int8_t Y, char *Hanzi) // 汉字单字打印;
 	OLED_ShowImage(X, Y, 16, 16, OLED_CF16x16[pIndex].Data);
 }
 
-void Menu_ShowString(uint8_t X, uint8_t Y, char *str, uint8_t FontSize){
+void Menu_ShowString(uint8_t X, uint8_t Y, char *String, uint8_t FontSize){
 
-    uint8_t i = 0;
-	uint8_t pChinese = 0;
-	char SingleChinese[OLED_CHN_CHAR_WIDTH + 1] = {0};
-	while (str[i] != '\0') // 遍历字符串的每个字符
+    uint8_t i = 0, len = 0;
+	while (String[i] != '\0') // 遍历字符串的每个字符
 	{
-		if (str[i] > '~'){
-			SingleChinese[pChinese] = str[i];	//提取汉字串数据到单个汉字数组
-			pChinese ++;
-			i ++;
-			
-			if (pChinese >= OLED_CHN_CHAR_WIDTH){
-				pChinese = 0;
-				// /*遍历整个汉字字模库，寻找匹配的汉字*/
-				// /*如果找到最后一个汉字（定义为空字符串），则表示汉字未在字模库定义，停止寻找*/
-				// for (pIndex = 0; strcmp(OLED_CF16x16[pIndex].Index, "") != 0; pIndex ++)
-				// {
-				// 	/*找到匹配的汉字*/
-				// 	if (strcmp(OLED_CF16x16[pIndex].Index, SingleChinese) == 0)
-				// 	{
-				// 		break;		//跳出循环，此时pIndex的值为指定汉字的索引
-				// 	}
-				// }
-				
-				// /*将汉字字模库OLED_CF16x16的指定数据以16*16的图像格式显示*/
-				// OLED_ShowImage(X + ((i + 1) / OLED_CHN_CHAR_WIDTH - 1) * 16, Y, 16, 16, OLED_CF16x16[pIndex].Data);
-				Menu_ShowChinese(X + ((i + 1) / OLED_CHN_CHAR_WIDTH - 1) * 16, Y, SingleChinese);
+		if (String[i] == '\n')
+		{
+			Y += (FontSize == 8) ? 16 : 8;
+			len = 0;
+			i++;
+		} // 兼容换行符
+		if (X + (len + 1) * FontSize > 128)
+		{
+			Y += (FontSize == 8) ? 16 : 8;
+			len = 0;
+		} // 超出屏幕自动换行
+		if ((int8_t)Y > 64)
+		{
+			return;
+		} //
+
+		if (String[i] > '~') // 如果不属于英文字符
+		{
+			char SingleChinese[4] = {0};
+			SingleChinese[0] = String[i];
+			i++;
+			SingleChinese[1] = String[i];
+			i++;
+			SingleChinese[2] = String[i];
+
+			if (FontSize == 8)
+			{
+				Menu_ShowChinese(X + len * FontSize, Y, SingleChinese, FontSize);
 			}
+			else
+			{
+				Menu_ShowChinese(X + len * FontSize, Y, SingleChinese, FontSize);
+			}
+
+			i++;
+			len += 2;
 		}
-		else {
-			OLED_ShowChar(X + i * FontSize, Y, str[i], FontSize);
-			i ++;
+		else /*调用OLED_ShowChar函数，依次显示每个字符*/
+		{
+			OLED_ShowChar(X + len * FontSize, Y, String[i], FontSize);
+			i++;
+			len++;
 		}
 	}
 }

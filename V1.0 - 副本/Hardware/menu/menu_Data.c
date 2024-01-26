@@ -19,7 +19,7 @@ void MENU_OptionToolsMenu(void){
 	static Option_Class Option_ToolsMenu[] = {
 		{"<<<"},
 		{"PWM"},
-		{"检测电压"},
+		{"ADC检测电压"},
 		{".."},
 		{"\0"}
 	};
@@ -27,25 +27,17 @@ void MENU_OptionToolsMenu(void){
 	MENU_RunMain(Option_ToolsMenu);
 }
 
-void MENU_OptionSettingMenu(void){
-
-	static Option_Class Option_SettingMenu[] = {
-		{"<<<"},
-		{"Setting"},
-		{".."},
-		{"\0"}
-	};
-
-	MENU_RunMain(Option_SettingMenu);
-}
-
 void MENU_OptionInformationMenu(void){
 
-	static Option_Class Option_InformationMenu[] = {
-		{"Menu V1.0"},
-		{"up：讨厌下雨天"},
-		{"\0"}
-	};
+	OLED_Clear();
+	OLED_ShowImage(70, 5, 40, 40, Diode);
+	Menu_ShowString(0, 0, "Menu:V1.0", OLED_6X8);
+	Menu_ShowString(0, 48, "up:讨厌下雨天", OLED_8X16);
+	OLED_Update();
 
-	MENU_RunMain(Option_InformationMenu);
+	while(1){
+		if (Key2_signal_func() || Key1_signal_func()){
+			return;
+		}
+	}
 }
